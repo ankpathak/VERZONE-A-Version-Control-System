@@ -2,7 +2,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-int lcs(char *a,char *b,int m,int n,int q,int w)
+int lcs(char *a,char *b,int m,int n)
 {
         int i,j,k=0;
 	for(j=m-1;j>=0;j--)
@@ -41,7 +41,7 @@ void diff(char *file1, char *file2,char *file3){
                 for(j=0;j<count2;j++){
                         fgets(str2,100,fp2);
                         n=strlen(str2);
-                        temp=lcs(str1,str2,m,n,i,j);
+                        temp=lcs(str1,str2,m,n);
                         if(temp==0)
                                 break;
                 }
@@ -59,7 +59,7 @@ void diff(char *file1, char *file2,char *file3){
                 for(j=0;j<count2;j++){
                         fgets(str1,100,fp1);
                         n=strlen(str1);
-                        temp=lcs(str1,str2,m,n,i,j);
+                        temp=lcs(str1,str2,m,n);
 			if(temp==0)
                                 break;
                 }
